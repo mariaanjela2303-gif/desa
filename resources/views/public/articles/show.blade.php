@@ -3,28 +3,28 @@
 @section('title', $article->title . ' - Desa Tautpah')
 
 @section('content')
-<!-- Header Banner -->
-<section class="py-5 text-white" style="background: linear-gradient(135deg, #14532d, #15803d);">
-    <div class="container py-3">
+<!-- Header Banner Modern & Aesthetic -->
+<section class="py-5 text-white position-relative overflow-hidden" style="background: radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.22) 0%, transparent 45%), radial-gradient(circle at 90% 80%, rgba(5, 150, 105, 0.25) 0%, transparent 50%), linear-gradient(135deg, #05231a 0%, #064e3b 60%, #083c2e 100%);">
+    <div class="container py-4 position-relative" style="z-index: 1;">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-2">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-white text-decoration-none">Beranda</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('public.articles') }}" class="text-white text-decoration-none">Berita & Pengumuman</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-emerald-200 text-decoration-none" style="color: #a7f3d0;">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('public.articles') }}" class="text-emerald-200 text-decoration-none" style="color: #a7f3d0;">Berita & Pengumuman</a></li>
                 <li class="breadcrumb-item text-white-50 active text-truncate" style="max-width: 250px;" aria-current="page">{{ $article->title }}</li>
             </ol>
         </nav>
-        <span class="badge {{ $article->type === 'pengumuman' ? 'bg-warning text-dark' : 'bg-success bg-opacity-75 text-white' }} px-3 py-1 rounded-pill mb-2">
+        <span class="badge {{ $article->type === 'pengumuman' ? 'badge-pill-amber' : 'badge-pill-emerald' }} mb-2" style="{{ $article->type === 'pengumuman' ? '' : 'background: rgba(255, 255, 255, 0.12); color: #6ee7b7; border-color: rgba(255, 255, 255, 0.2);' }}">
             {{ ucfirst($article->type) }}
         </span>
-        <h1 class="fw-bold mb-3">{{ $article->title }}</h1>
-        <div class="d-flex flex-wrap align-items-center gap-3 text-white-50 small">
-            <span><i class="bi bi-person-fill text-white me-1"></i> {{ $article->user?->name ?? 'Admin Desa' }}</span>
+        <h1 class="fw-bold mb-3 text-white">{{ $article->title }}</h1>
+        <div class="d-flex flex-wrap align-items-center gap-3 text-emerald-100 small" style="color: #d1fae5;">
+            <span><i class="bi bi-person-fill me-1"></i> {{ $article->user?->name ?? 'Admin Desa' }}</span>
             <span>&bull;</span>
-            <span><i class="bi bi-calendar3 text-white me-1"></i> {{ $article->published_at ? $article->published_at->translatedFormat('d F Y') : $article->created_at->translatedFormat('d F Y') }}</span>
+            <span><i class="bi bi-calendar3 me-1"></i> {{ $article->published_at ? $article->published_at->translatedFormat('d F Y') : $article->created_at->translatedFormat('d F Y') }}</span>
             <span>&bull;</span>
-            <span><i class="bi bi-tag-fill text-white me-1"></i> {{ $article->category?->name ?? 'Umum' }}</span>
+            <span><i class="bi bi-tag-fill me-1"></i> {{ $article->category?->name ?? 'Umum' }}</span>
             <span>&bull;</span>
-            <span><i class="bi bi-eye-fill text-white me-1"></i> {{ $article->views_count }} kali dilihat</span>
+            <span><i class="bi bi-eye-fill me-1"></i> {{ $article->views_count }} kali dilihat</span>
         </div>
     </div>
 </section>

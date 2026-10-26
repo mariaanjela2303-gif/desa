@@ -16,14 +16,14 @@
 
     <style>
         :root {
-            --kades-sidebar-bg: #1e1b4b;
-            --kades-accent: #4338ca;
+            --kades-sidebar-bg: #111827;
+            --kades-accent: #059669;
             --kades-active: #4f46e5;
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #f8fafc;
+            background-color: #f8faf9;
             color: #1e293b;
         }
 
@@ -33,17 +33,18 @@
         }
 
         #kades-sidebar {
-            width: 270px;
+            width: 275px;
             background-color: var(--kades-sidebar-bg);
             color: #cbd5e1;
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .sidebar-brand {
             padding: 24px 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .sidebar-menu {
@@ -52,12 +53,13 @@
         }
 
         .menu-header {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
-            color: #818cf8;
+            letter-spacing: 1.3px;
+            color: #a5b4fc;
+            opacity: 0.8;
             font-weight: 700;
-            margin: 16px 10px 8px;
+            margin: 18px 10px 8px;
         }
 
         .sidebar-link {
@@ -65,12 +67,12 @@
             align-items: center;
             gap: 12px;
             padding: 10px 14px;
-            color: #c7d2fe;
+            color: #94a3b8;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 500;
             font-size: 0.9rem;
-            transition: all 0.2s ease;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
             margin-bottom: 4px;
         }
 
@@ -80,14 +82,16 @@
 
         .sidebar-link:hover {
             color: #ffffff;
-            background-color: rgba(255, 255, 255, 0.08);
+            background-color: rgba(255, 255, 255, 0.06);
+            transform: translateX(3px);
         }
 
         .sidebar-link.active {
             color: #ffffff;
-            background-color: var(--kades-active);
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
             font-weight: 600;
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+            box-shadow: 0 6px 18px -2px rgba(79, 70, 229, 0.4);
+        }
         }
 
         #kades-content {

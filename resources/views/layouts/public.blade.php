@@ -17,53 +17,80 @@
 
     <style>
         :root {
-            --desa-green-dark: #14532d;
-            --desa-green-primary: #15803d;
-            --desa-green-light: #22c55e;
-            --desa-green-soft: #f0fdf4;
-            --desa-text-dark: #1e293b;
+            /* Emerald Botanical Aesthetic Palette */
+            --desa-forest-dark: #062e22;
+            --desa-forest-surface: #0a4232;
+            --desa-emerald-deep: #065f46;
+            --desa-emerald-main: #059669;
+            --desa-emerald-light: #10b981;
+            --desa-emerald-glow: rgba(16, 185, 129, 0.25);
+            
+            --desa-sage-soft: #f0fdf4;
+            --desa-sage-subtle: #dcfce7;
+            --desa-sage-border: rgba(5, 150, 105, 0.15);
+            
+            --desa-bg-canvas: #f8faf8;
+            --desa-bg-card: #ffffff;
+            
+            --desa-text-headline: #071e16;
+            --desa-text-body: #334155;
             --desa-text-muted: #64748b;
+            
+            --desa-amber-soft: #fffbeb;
+            --desa-amber-text: #b45309;
+            --desa-amber-border: #fde68a;
+            
+            --desa-shadow-sm: 0 2px 8px -2px rgba(6, 46, 34, 0.05);
+            --desa-shadow-md: 0 10px 25px -5px rgba(6, 46, 34, 0.06), 0 8px 10px -6px rgba(6, 46, 34, 0.04);
+            --desa-shadow-lg: 0 20px 35px -10px rgba(6, 46, 34, 0.09), 0 10px 15px -5px rgba(6, 46, 34, 0.03);
+            --desa-shadow-glow: 0 10px 25px -3px rgba(5, 150, 105, 0.3);
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--desa-text-dark);
-            background-color: #f8fafc;
+            color: var(--desa-text-body);
+            background-color: var(--desa-bg-canvas);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
         }
 
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--desa-text-headline);
+            letter-spacing: -0.02em;
+        }
+
+        /* Top Bar */
         .top-bar {
-            background-color: var(--desa-green-dark);
-            color: #e2e8f0;
-            font-size: 0.85rem;
-            padding: 8px 0;
+            background-color: var(--desa-forest-dark);
+            color: #d1fae5;
+            font-size: 0.82rem;
+            padding: 9px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
         }
 
-        .navbar-desa {
-            background-color: #ffffff;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
-            padding: 14px 0;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-desa .nav-link {
-            font-weight: 600;
-            color: #334155;
-            padding: 8px 16px !important;
-            border-radius: 8px;
+        .top-bar a {
             transition: all 0.2s;
         }
 
-        .navbar-desa .nav-link:hover,
-        .navbar-desa .nav-link.active {
-            color: var(--desa-green-primary) !important;
-            background-color: var(--desa-green-soft);
+        .top-bar a:hover {
+            color: #6ee7b7 !important;
+        }
+
+        /* Glassmorphic Navbar */
+        .navbar-desa {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 4px 24px -2px rgba(6, 46, 34, 0.04);
+            border-bottom: 1px solid rgba(6, 78, 59, 0.06);
+            padding: 14px 0;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .brand-badge {
-            background: linear-gradient(135deg, var(--desa-green-primary), var(--desa-green-dark));
+            background: linear-gradient(135deg, #059669 0%, #064e3b 100%);
             color: white;
             width: 44px;
             height: 44px;
@@ -72,91 +99,149 @@
             align-items: center;
             justify-content: center;
             font-size: 1.35rem;
-            box-shadow: 0 4px 10px rgba(21, 128, 61, 0.3);
+            box-shadow: 0 6px 16px -2px rgba(5, 150, 105, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.25s ease;
         }
 
+        .navbar-brand:hover .brand-badge {
+            transform: scale(1.05) rotate(-3deg);
+        }
+
+        .navbar-desa .nav-link {
+            font-weight: 600;
+            color: #475569;
+            padding: 8px 16px !important;
+            border-radius: 50px;
+            transition: all 0.2s ease;
+            font-size: 0.92rem;
+        }
+
+        .navbar-desa .nav-link:hover {
+            color: var(--desa-emerald-main) !important;
+            background-color: var(--desa-sage-soft);
+        }
+
+        .navbar-desa .nav-link.active {
+            color: var(--desa-emerald-deep) !important;
+            background-color: var(--desa-sage-subtle);
+        }
+
+        /* Aesthetic Buttons */
         .btn-desa-primary {
-            background-color: var(--desa-green-primary);
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
             color: #ffffff;
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
             font-weight: 600;
             padding: 10px 22px;
-            border-radius: 8px;
-            transition: all 0.2s ease;
+            border-radius: 50px;
+            box-shadow: var(--desa-shadow-glow);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .btn-desa-primary:hover {
-            background-color: var(--desa-green-dark);
+            background: linear-gradient(135deg, #047857 0%, #064e3b 100%);
             color: #ffffff;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(21, 128, 61, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -4px rgba(5, 150, 105, 0.45);
         }
 
         .btn-desa-outline {
-            border: 2px solid var(--desa-green-primary);
-            color: var(--desa-green-primary);
+            border: 1.5px solid var(--desa-emerald-main);
+            color: var(--desa-emerald-main);
             font-weight: 600;
-            padding: 8px 20px;
-            border-radius: 8px;
-            background: transparent;
-            transition: all 0.2s ease;
-        }
-
-        .btn-desa-outline:hover {
-            background-color: var(--desa-green-primary);
-            color: #ffffff;
-        }
-
-        .section-title {
-            position: relative;
-            margin-bottom: 2.5rem;
-        }
-
-        .section-title h2 {
-            font-weight: 800;
-            color: #0f172a;
-        }
-
-        .section-title .badge-sub {
-            background-color: var(--desa-green-soft);
-            color: var(--desa-green-primary);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.75rem;
-            padding: 6px 14px;
+            padding: 9px 22px;
             border-radius: 50px;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-
-        .card-custom {
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            overflow: hidden;
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.8);
             transition: all 0.25s ease;
         }
 
-        .card-custom:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.08);
-            border-color: #cbd5e1;
+        .btn-desa-outline:hover {
+            background-color: var(--desa-emerald-main);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -2px rgba(5, 150, 105, 0.25);
         }
 
+        /* Aesthetic Badges */
+        .badge-pill-emerald {
+            background-color: var(--desa-sage-soft);
+            color: var(--desa-emerald-deep);
+            border: 1px solid var(--desa-sage-border);
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .badge-pill-amber {
+            background-color: var(--desa-amber-soft);
+            color: var(--desa-amber-text);
+            border: 1px solid var(--desa-amber-border);
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Aesthetic Cards */
+        .card-custom {
+            border: 1px solid rgba(6, 78, 59, 0.08);
+            border-radius: 18px;
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: var(--desa-shadow-sm);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card-custom:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--desa-shadow-lg);
+            border-color: rgba(5, 150, 105, 0.25);
+        }
+
+        /* Footer */
         footer {
             margin-top: auto;
-            background-color: #0f172a;
+            background: linear-gradient(180deg, #06241a 0%, #03140e 100%);
             color: #94a3b8;
-            padding-top: 4rem;
+            padding-top: 4.5rem;
             padding-bottom: 2rem;
+            position: relative;
+            border-top: 1px solid rgba(16, 185, 129, 0.15);
         }
 
         footer h5 {
-            color: #f8fafc;
+            color: #f1f5f9;
             font-weight: 700;
             margin-bottom: 1.25rem;
+            letter-spacing: -0.01em;
         }
+
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        footer a:hover {
+            color: #34d399;
+            transform: translateX(3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 3.5rem;
+            padding-top: 1.75rem;
+            font-size: 0.85rem;
+        }
+    </style>
 
         footer a {
             color: #94a3b8;

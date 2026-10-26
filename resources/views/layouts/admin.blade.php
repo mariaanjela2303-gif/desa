@@ -16,14 +16,15 @@
 
     <style>
         :root {
-            --admin-sidebar-bg: #0f172a;
-            --admin-sidebar-active: #15803d;
-            --admin-accent: #15803d;
+            --admin-sidebar-bg: #041d15;
+            --admin-sidebar-surface: #072e22;
+            --admin-sidebar-active: #059669;
+            --admin-accent: #059669;
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #f1f5f9;
+            background-color: #f8faf8;
             color: #1e293b;
         }
 
@@ -33,18 +34,20 @@
         }
 
         #admin-sidebar {
-            width: 270px;
+            width: 275px;
             background-color: var(--admin-sidebar-bg);
-            color: #cbd5e1;
+            color: #d1fae5;
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
+            border-right: 1px solid rgba(16, 185, 129, 0.1);
             transition: all 0.3s ease;
         }
 
         .sidebar-brand {
             padding: 24px 20px;
-            border-bottom: 1px solid #1e293b;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
         }
 
         .sidebar-menu {
@@ -53,12 +56,13 @@
         }
 
         .menu-header {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
-            color: #64748b;
+            letter-spacing: 1.3px;
+            color: #6ee7b7;
+            opacity: 0.7;
             font-weight: 700;
-            margin: 16px 10px 8px;
+            margin: 18px 10px 8px;
         }
 
         .sidebar-link {
@@ -68,10 +72,10 @@
             padding: 10px 14px;
             color: #94a3b8;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 500;
             font-size: 0.9rem;
-            transition: all 0.2s ease;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
             margin-bottom: 4px;
         }
 
@@ -80,15 +84,16 @@
         }
 
         .sidebar-link:hover {
-            color: #f8fafc;
-            background-color: #1e293b;
+            color: #ffffff;
+            background-color: var(--admin-sidebar-surface);
+            transform: translateX(3px);
         }
 
         .sidebar-link.active {
             color: #ffffff;
-            background-color: var(--admin-sidebar-active);
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
             font-weight: 600;
-            box-shadow: 0 4px 12px rgba(21, 128, 61, 0.35);
+            box-shadow: 0 6px 18px -2px rgba(5, 150, 105, 0.4);
         }
 
         #admin-content {
@@ -100,48 +105,55 @@
 
         .admin-header {
             background-color: #ffffff;
-            border-bottom: 1px solid #e2e8f0;
-            padding: 14px 28px;
+            border-bottom: 1px solid rgba(6, 78, 59, 0.08);
+            padding: 16px 32px;
+            box-shadow: 0 2px 12px -2px rgba(0, 0, 0, 0.02);
         }
 
         .admin-main {
-            padding: 28px;
+            padding: 32px;
             flex-grow: 1;
         }
 
         .card-stat {
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 20px;
+            border: 1px solid rgba(6, 78, 59, 0.08);
+            border-radius: 16px;
+            padding: 22px;
             background: #ffffff;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-            transition: transform 0.2s;
+            box-shadow: 0 4px 20px -4px rgba(6, 46, 34, 0.04);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
         }
 
         .card-stat:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px -6px rgba(6, 46, 34, 0.08);
         }
 
         .stat-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 10px;
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.35rem;
+            font-size: 1.45rem;
         }
 
         .btn-success-desa {
-            background-color: #15803d;
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
             color: white;
             border: none;
             font-weight: 600;
+            border-radius: 50px;
+            box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+            transition: all 0.25s ease;
         }
 
         .btn-success-desa:hover {
-            background-color: #166534;
+            background: linear-gradient(135deg, #047857 0%, #064e3b 100%);
             color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(5, 150, 105, 0.4);
         }
 
         .badge-role {

@@ -7,12 +7,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-5">
             <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
-                <div class="p-4 p-md-5 text-center text-white" style="background: linear-gradient(135deg, #14532d, #15803d);">
-                    <div class="d-inline-flex p-3 rounded-circle bg-white bg-opacity-25 mb-3">
-                        <i class="bi bi-shield-lock-fill fs-2 text-white"></i>
+                <div class="p-4 p-md-5 text-center text-white" style="background: radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.25) 0%, transparent 45%), linear-gradient(135deg, #05231a 0%, #064e3b 60%, #083c2e 100%);">
+                    <div class="d-inline-flex p-3 rounded-4 mb-3 shadow-sm" style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <i class="bi bi-shield-lock-fill fs-2" style="color: #6ee7b7;"></i>
                     </div>
-                    <h4 class="fw-bold mb-1">Masuk Panel Pengelola</h4>
-                    <p class="small text-white-50 mb-0">Pemerintah Desa Tautpah, Kec. Biboki Selatan</p>
+                    <h4 class="fw-bold mb-1 text-white">Masuk Panel Pengelola</h4>
+                    <p class="small mb-0" style="color: #cbd5e1;">Pemerintah Desa Tautpah, Kec. Biboki Selatan</p>
                 </div>
 
                 <div class="card-body p-4 p-md-5 bg-white">

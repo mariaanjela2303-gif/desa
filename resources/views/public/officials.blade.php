@@ -3,17 +3,20 @@
 @section('title', 'Struktur Pemerintahan - Pemerintah Desa Tautpah')
 
 @section('content')
-<!-- Header Banner -->
-<section class="py-5 text-white" style="background: linear-gradient(135deg, #14532d, #15803d);">
-    <div class="container py-3">
+<!-- Header Banner Modern & Aesthetic -->
+<section class="py-5 text-white position-relative overflow-hidden" style="background: radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.22) 0%, transparent 45%), radial-gradient(circle at 90% 80%, rgba(5, 150, 105, 0.25) 0%, transparent 50%), linear-gradient(135deg, #05231a 0%, #064e3b 60%, #083c2e 100%);">
+    <div class="container py-4 position-relative" style="z-index: 1;">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-2">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-white text-decoration-none">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-emerald-200 text-decoration-none" style="color: #a7f3d0;">Beranda</a></li>
                 <li class="breadcrumb-item text-white-50 active" aria-current="page">Pemerintahan</li>
             </ol>
         </nav>
-        <h1 class="fw-bold mb-2">Struktur Pemerintahan & Perangkat Desa</h1>
-        <p class="lead text-white-50 mb-0">Susunan aparatur pemerintah Desa Tautpah yang bertugas melayani masyarakat.</p>
+        <span class="badge-pill-emerald mb-2" style="background: rgba(255, 255, 255, 0.12); color: #6ee7b7; border-color: rgba(255, 255, 255, 0.2);">
+            <i class="bi bi-people"></i> Struktur Organisasi
+        </span>
+        <h1 class="fw-bold mb-2 text-white">Aparatur Pemerintah Desa Tautpah</h1>
+        <p class="lead text-emerald-100 mb-0" style="color: #cbd5e1; font-size: 1.05rem;">Susunan kepengurusan dan perangkat desa yang bertugas melayani segenap warga masyarakat.</p>
     </div>
 </section>
 
